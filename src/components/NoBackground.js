@@ -8,11 +8,15 @@ const NoBackground = ({ imageName }) => {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `http://localhost:5000/images/${imageName ? imageName : undefined}`
+      `https://pleasant-lamb-uniform.cyclic.app/images/${
+        imageName ? imageName : undefined
+      }`
     ).then((res) => {
       setOriginalImage(res.url);
       fetch(
-        `http://localhost:5000/images/${imageName?.split(".")[0] + ".png"}`
+        `https://pleasant-lamb-uniform.cyclic.app/images/${
+          imageName?.split(".")[0] + ".png"
+        }`
       ).then((res) => {
         setImageWithNoBackground(res.url);
         setIsLoading(false);
@@ -61,7 +65,7 @@ const NoBackground = ({ imageName }) => {
         <a
           className="bg-purple-500 px-5 py-3 block"
           download={imageName.split(".")[0] + ".png"}
-          href={`http://localhost:5000/images/${
+          href={`https://pleasant-lamb-uniform.cyclic.app/images/${
             imageName.split(".")[0] + ".png"
           }`}
         >

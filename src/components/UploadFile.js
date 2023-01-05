@@ -18,11 +18,13 @@ const UploadFile = ({ setImageName }) => {
         "content-type": "multipart/form-data",
       },
     };
-    axios.post("http://localhost:5000/photo", formData, config).then((res) => {
-      console.log("successfully uploaded");
-      setIsLoading(false);
-      navigate("/background");
-    });
+    axios
+      .post("https://pleasant-lamb-uniform.cyclic.app/photo", formData, config)
+      .then((res) => {
+        console.log("successfully uploaded");
+        setIsLoading(false);
+        navigate("/background");
+      });
     // setIsLoading(false);
   };
 
